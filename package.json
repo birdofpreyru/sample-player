@@ -5,12 +5,13 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "npm run coverage && npm run api && npm run discify && npm run dist",
-    "test": "mocha",
+    "test": "npm run lint && mocha",
     "api": "jsdoc2md --property-list-format none --member-index-format none lib/*.js > API.md",
     "dist": "mkdir -p dist && browserify lib/index.js | uglifyjs > dist/sample-player.min.js && ls -hall dist/",
     "coverage": "istanbul cover _mocha",
     "cover": "npm run coverage && open coverage/lcov-report/index.html",
-    "discify": "browserify --full-paths lib/index.js | uglifyjs | discify > tmp/disc.html && open tmp/disc.html"
+    "discify": "browserify --full-paths lib/index.js | uglifyjs | discify > tmp/disc.html && open tmp/disc.html",
+    "lint": "eslint ."
   },
   "repository": "https://github.com/birdofpreyru/sample-player",
   "keywords": [
@@ -35,8 +36,9 @@
     "browserify": "^17.0.0",
     "eslint": "^7.27.0",
     "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-standard": "^5.0.0",
     "mocha": "^8.4.0",
     "uglify-js": "^3.13.8",
     "web-audio-test-api": "^0.5.2"

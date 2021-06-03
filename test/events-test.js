@@ -1,7 +1,7 @@
 /* globals describe it */
-var assert = require('assert')
-var Player = require('..')
-var Audio = require('./support/audio')
+const assert = require('assert')
+const Player = require('..')
+const Audio = require('./support/audio')
 
 function eventHandler () {
   function handler (e, t, o) {
@@ -14,11 +14,11 @@ function eventHandler () {
 }
 
 describe('events', function () {
-  it('emit events', function () {
-    var audio = new Audio('one')
-    var player = Player(audio.ac, audio.buffers).connect(audio.ac.destination)
+  it('emit events', async () => {
+    const audio = new Audio('one')
+    const player = Player(audio.ac, audio.buffers).connect(audio.ac.destination)
     player.onevent = eventHandler()
-    player.play('one')
+    await player.play('one')
     assert.deepStrictEqual(player.onevent.events.length, 2)
     assert.deepStrictEqual(player.onevent.events[0], { event: 'start', time: 0, object: 'one' })
     assert.deepStrictEqual(player.onevent.events[1], { event: 'started', time: 0, object: 0 })
@@ -26,7 +26,7 @@ describe('events', function () {
     assert.deepStrictEqual(player.onevent.last, { event: 'stop', time: 0, object: 'one' })
   })
   it('event handlers receives all events', function () {
-    var player = Player(new Audio().ac)
+    const player = Player(new Audio().ac)
     player.onevent = eventHandler()
     player.onready = eventHandler()
     player.onstart = eventHandler()
@@ -37,9 +37,9 @@ describe('events', function () {
     assert.strictEqual(player.onevent.events.length, 2)
   })
   it('add handlers', function () {
-    var player = Player(new Audio().ac)
-    var one = eventHandler()
-    var two = eventHandler()
+    const player = Player(new Audio().ac)
+    const one = eventHandler()
+    const two = eventHandler()
     player.on('event', one)
     player.on('event', two)
     player.emit('ready', 0, 'obj')
@@ -47,14 +47,14 @@ describe('events', function () {
     assert.deepStrictEqual(two.last, { event: 'ready', time: 0, object: 'obj' })
   })
   it('uses "event" as default', function () {
-    var player = Player(new Audio().ac)
-    var handler = eventHandler()
+    const player = Player(new Audio().ac)
+    const handler = eventHandler()
     player.on(handler)
     player.emit('blah', 0, 'obj')
     assert.deepStrictEqual(handler.last, { event: 'blah', time: 0, object: 'obj' })
   })
   it('on returns the player', function () {
-    var player = Player(new Audio().ac)
+    const player = Player(new Audio().ac)
     assert(player === player.on('event', eventHandler()))
   })
 })

@@ -1,13 +1,13 @@
 /* global AudioContext */
-var load = require('@dr.pogodin/audio-loader')
-var player = require('..')
-var ac = new AudioContext()
+const load = require('@dr.pogodin/audio-loader')
+const player = require('..')
+const ac = new AudioContext()
 
 document.body.innerHTML = '<h1>Loop example (sample-player)</h1>(open the dev console)'
 console.log('Loading sample...')
 load(ac, 'examples/audio/440Hz.mp3').then(function (buffer) {
   console.log('loaded')
-  var sine = player(ac, buffer, { gain: 0.3, loop: true, adsr: [1, 0.5, 0.5, 5] })
+  const sine = player(ac, buffer, { gain: 0.3, loop: true, adsr: [1, 0.5, 0.5, 5] })
   sine.on('event', function (a, b, c) {
     console.log(a, b, c)
   })
