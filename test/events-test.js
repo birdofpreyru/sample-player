@@ -32,9 +32,9 @@ describe('events', function () {
     player.onstart = eventHandler()
     player.emit('ready')
     player.emit('start')
-    assert.equal(player.onready.events.length, 1)
-    assert.equal(player.onstart.events.length, 1)
-    assert.equal(player.onevent.events.length, 2)
+    assert.strictEqual(player.onready.events.length, 1)
+    assert.strictEqual(player.onstart.events.length, 1)
+    assert.strictEqual(player.onevent.events.length, 2)
   })
   it('add handlers', function () {
     var player = Player(new Audio().ac)
