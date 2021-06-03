@@ -1,5 +1,5 @@
 {
-  "name": "sample-player",
+  "name": "@dr.pogodin/sample-player",
   "version": "0.6.0",
   "description": "A flexible web audio buffer player",
   "main": "lib/index.js",
@@ -10,10 +10,9 @@
     "dist": "mkdir -p dist && browserify lib/index.js | uglifyjs > dist/sample-player.min.js && ls -hall dist/",
     "coverage": "istanbul cover _mocha",
     "cover": "npm run coverage && open coverage/lcov-report/index.html",
-    "discify": "browserify --full-paths lib/index.js | uglifyjs | discify > tmp/disc.html && open tmp/disc.html",
-    "prepublish": "npm test && npm run dist"
+    "discify": "browserify --full-paths lib/index.js | uglifyjs | discify > tmp/disc.html && open tmp/disc.html"
   },
-  "repository": "https://github.com/danigb/sample-player",
+  "repository": "https://github.com/birdofpreyru/sample-player",
   "keywords": [
     "audio",
     "buffer",
@@ -21,10 +20,10 @@
     "player",
     "webaudio"
   ],
-  "author": "danigb <danigb@gmail.com>",
+  "author": "Dr. Sergey Pogodin <doc@pogodin.studio>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danigb/sample-player/issues"
+    "url": "https://github.com/birdofpreyru/sample-player/issues"
   },
   "dependencies": {
     "adsr": "^1.0.0",

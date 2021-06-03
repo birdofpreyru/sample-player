@@ -1,12 +1,17 @@
-# sample-player [![npm](https://img.shields.io/npm/v/sample-player.svg?style=flat-square)](https://www.npmjs.com/package/sample-player)
+# sample-player [![npm](https://img.shields.io/npm/v/@dr.pogodin/sample-player.svg)](https://www.npmjs.com/package/@dr.pogodin/sample-player)
 
-[![Build Status](https://img.shields.io/travis/danigb/sample-player/master.svg?style=flat-square)](https://travis-ci.org/danigb/sample-player)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard) [![license](https://img.shields.io/npm/l/sample-player.svg?style=flat-square)](https://www.npmjs.com/package/sample-player)
+[![Build Status](https://img.shields.io/circleci/project/github/birdofpreyru/sample-player/master.svg)](https://app.circleci.com/pipelines/github/birdofpreyru/sample-player)
+[![license](https://img.shields.io/npm/l/@dr.pogodin/sample-player.svg)](https://www.npmjs.com/package/@dr.pogodin/sample-player)
+
+_This is an up-to-date fork of [**sample-player**](https://www.npmjs.com/package/sample-player) library._
+
+**ORIGINAL README BELOW**
+---
 
 Flexible audio sample player for browser:
 
 ```js
-var player = require('sample-player')
+var player = require('@dr.pogodin/sample-player')
 var ac = new AudioContext()
 
 var sample = player(ac, <AudioBuffer>)
@@ -22,7 +27,7 @@ sample.stop() // stop all playing sounds
 Pass a map of names to audio buffers to create a multi-sample player:
 
 ```js
-var player = require('sample-player')
+var player = require('@dr.pogodin/sample-player')
 var ac = new AudioContext()
 var drums = player(ac, {
   kick: <AudioBuffer>,
@@ -143,7 +148,7 @@ Create a sample player.
 
 **Example**  
 ```js
-var SamplePlayer = require('sample-player')
+var SamplePlayer = require('@dr.pogodin/sample-player')
 var ac = new AudioContext()
 var snare = SamplePlayer(ac, <AudioBuffer>)
 snare.start()
