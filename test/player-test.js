@@ -14,7 +14,7 @@ describe('player', function () {
       var audio = new Audio('snare')
       var player = Player(audio.ac, audio.buffers)
       assert.equal(player.connect(audio.ac.destination), player)
-      assert.deepEqual(audio.output(),
+      assert.deepStrictEqual(audio.output(),
         { name: 'GainNode', gain: { value: 1, inputs: [] }, inputs: [] })
     })
   })

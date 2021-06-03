@@ -1,5 +1,5 @@
 /* global AudioContext */
-var load = require('audio-loader')
+var load = require('@dr.pogodin/audio-loader')
 var player = require('..')
 var ac = new AudioContext()
 

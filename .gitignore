@@ -1,4 +1,6 @@
+/dist/
 node_modules
 tmp
 coverage/
 API.md
+/dr.pogodin-sample-player-*.tgz
