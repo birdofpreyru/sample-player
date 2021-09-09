@@ -1,6 +1,6 @@
 {
   "name": "@dr.pogodin/sample-player",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A flexible web audio buffer player",
   "main": "lib/index.js",
   "scripts": {
@@ -34,13 +34,13 @@
   "devDependencies": {
     "@dr.pogodin/audio-loader": "^1.2.5",
     "browserify": "^17.0.0",
-    "eslint": "^7.27.0",
+    "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "mocha": "^8.4.0",
-    "uglify-js": "^3.13.8",
+    "mocha": "^9.1.1",
+    "uglify-js": "^3.14.2",
     "web-audio-test-api": "^0.5.2"
   }
 }
