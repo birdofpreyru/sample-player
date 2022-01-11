@@ -130,6 +130,10 @@ The options can be passed to the `SamplePlayer` function to apply to all buffers
 - `adsr`: an array of `[attack, decay, sustain, release]`. Overrides other parameters.
 - `duration`: set the playing duration in seconds of the buffer(s)
 - `loop`: set to true to loop the audio buffer
+- `loopEnd` and `loopStart` set the loop range. If numbers they are interpreted
+  as time within sample in seconds, if percent strings, _e.g._ `25%` they are
+  interpreted as relative positions inside the audio buffer (relative to
+  the total buffer duration).
 
 ## API
 
